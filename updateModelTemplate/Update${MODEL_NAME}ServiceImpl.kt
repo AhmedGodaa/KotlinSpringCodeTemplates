@@ -1,20 +1,8 @@
-#if(${PACKAGE_NAME} && ${PACKAGE_NAME} != "") package ${PACKAGE_NAME}; #end
+#if(${PACKAGE_NAME} && ${PACKAGE_NAME} != "") package ${PACKAGE_NAME}.update${MODEL_NAME} #end
 
-data class Update${MODEL_NAME}Response(
-var message : String? = null,
-var ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)} : ${MODEL_NAME}? = null
 
-)
-data class Update${MODEL_NAME}Request(
-var ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)} : ${MODEL_NAME}? = null
-)
-
-interface Update${MODEL_NAME}Service {
-    fun update${MODEL_NAME}(update${MODEL_NAME}Request: Update${MODEL_NAME}Request?): Update${MODEL_NAME}Response
-}
-
+@Service
 class Update${MODEL_NAME}ServiceImpl(
-    private val update${MODEL_NAME}Service: Update${MODEL_NAME}Service,
     private val update${MODEL_NAME}Validator: Update${MODEL_NAME}Validator,
     private val ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}Repository: ${MODEL_NAME}Repository
 ) : Update${MODEL_NAME}Service {
@@ -29,7 +17,7 @@ class Update${MODEL_NAME}ServiceImpl(
         )
         return Update${MODEL_NAME}Response(
             message = "${MODEL_NAME} updated successfully",
-        ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)} = update${MODEL_NAME}(${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}ToUpdate)
+        ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)} = update${MODEL_NAME}DB(${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}ToUpdate)
         )
     }
 
@@ -40,7 +28,7 @@ class Update${MODEL_NAME}ServiceImpl(
 
     }
 
-    private fun update${MODEL_NAME}(${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}: ${MODEL_NAME}): ${MODEL_NAME} {
+    private fun update${MODEL_NAME}DB(${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}: ${MODEL_NAME}): ${MODEL_NAME} {
         return try {
             ${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)}Repository.save(${MODEL_NAME.substring(0,1).toLowerCase()}${MODEL_NAME.substring(1)})
         } catch (e: Exception) {
@@ -49,16 +37,4 @@ class Update${MODEL_NAME}ServiceImpl(
 
     }
 
-}
-interface Update${MODEL_NAME}Validator {
-    fun validateUpdate${MODEL_NAME}Request(update${MODEL_NAME}Request: Update${MODEL_NAME}Request?)
-}
-
-@Component
-class Update${MODEL_NAME}ValidatorImpl(
-    private val update${MODEL_NAME}Validator: Update${MODEL_NAME}Validator
-) : Update${MODEL_NAME}Validator {
-    override fun validateUpdate${MODEL_NAME}Request(update${MODEL_NAME}Request: Update${MODEL_NAME}Request?) {
-        if (update${MODEL_NAME}Request == null) { throw IllegalArgumentException("Update${MODEL_NAME}Request is null") }
-    }
 }

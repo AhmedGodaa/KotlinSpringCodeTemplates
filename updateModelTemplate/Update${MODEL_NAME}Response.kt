@@ -1,4 +1,4 @@
-#if(${PACKAGE_NAME} && ${PACKAGE_NAME} != "") package ${PACKAGE_NAME}.update${MODEL_NAME}; #end
+#if(${PACKAGE_NAME} && ${PACKAGE_NAME} != "") package ${PACKAGE_NAME}.update${MODEL_NAME} #end
 
 data class Update${MODEL_NAME}Response(
 var message : String? = null,
