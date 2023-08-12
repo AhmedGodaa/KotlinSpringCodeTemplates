@@ -1,6 +1,7 @@
 ## Documentation For UpdateModel Template
 
 ### File Naming 
+- Update Model
 ```vtl
 update${MODEL_NAME}/Update${MODEL_NAME}Docs.md
 update${MODEL_NAME}/Update${MODEL_NAME}Request.kt
@@ -10,6 +11,15 @@ update${MODEL_NAME}/Update${MODEL_NAME}ServiceImpl.kt
 update${MODEL_NAME}/Update${MODEL_NAME}Validator.kt
 update${MODEL_NAME}/Update${MODEL_NAME}ValidatorImpl.kt
 
+```
+- Create Model
+```vtl
+create${MODEL_NAME}/Create${MODEL_NAME}Validator
+create${MODEL_NAME}/Create${MODEL_NAME}ValidatorImpl
+create${MODEL_NAME}/Create${MODEL_NAME}Service
+create${MODEL_NAME}/Create${MODEL_NAME}ServiceImpl
+create${MODEL_NAME}/Create${MODEL_NAME}Response
+create${MODEL_NAME}/Create${MODEL_NAME}Request.kt
 ```
 ## Example Generation for Model: **User**
 ### Service
