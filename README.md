@@ -10,7 +10,15 @@ create${MODEL_NAME}/Create${MODEL_NAME}ServiceImpl
 create${MODEL_NAME}/Create${MODEL_NAME}Response
 create${MODEL_NAME}/Create${MODEL_NAME}Request.kt
 ```
-
+- Get Model
+```vtl
+get${MODEL_NAME}/Get${MODEL_NAME}Validator
+get${MODEL_NAME}/Get${MODEL_NAME}ValidatorImpl
+get${MODEL_NAME}/Get${MODEL_NAME}Service
+get${MODEL_NAME}/Get${MODEL_NAME}ServiceImpl
+get${MODEL_NAME}/Get${MODEL_NAME}Response
+get${MODEL_NAME}/Get${MODEL_NAME}Request
+```
 - Update Model
 ```vtl
 update${MODEL_NAME}/Update${MODEL_NAME}Docs.md
