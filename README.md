@@ -12,12 +12,13 @@ create${MODEL_NAME}/Create${MODEL_NAME}Request.kt
 ```
 - Get Model
 ```vtl
-get${MODEL_NAME}/Get${MODEL_NAME}Validator
-get${MODEL_NAME}/Get${MODEL_NAME}ValidatorImpl
-get${MODEL_NAME}/Get${MODEL_NAME}Service
-get${MODEL_NAME}/Get${MODEL_NAME}ServiceImpl
-get${MODEL_NAME}/Get${MODEL_NAME}Response
-get${MODEL_NAME}/Get${MODEL_NAME}Request
+get${MODEL_NAME}s/Get${MODEL_NAME}sDocs.md
+get${MODEL_NAME}s/Get${MODEL_NAME}sValidator
+get${MODEL_NAME}s/Get${MODEL_NAME}sValidatorImpl
+get${MODEL_NAME}s/Get${MODEL_NAME}sService
+get${MODEL_NAME}s/Get${MODEL_NAME}sServiceImpl
+get${MODEL_NAME}s/Get${MODEL_NAME}sResponse
+get${MODEL_NAME}s/Get${MODEL_NAME}sRequest
 ```
 - Update Model
 ```vtl
